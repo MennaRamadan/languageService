@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  title: Simple API overview
+  version: v2
+host: localhost:3000
+basepath: /
+schemes: 
+    - http
+consumes:
+    - application/json
+produces:
+    - application/json
+paths:
+    /example:
+    get:
+        description: Get examples 
+        summary: Get examples
+        parameters: 
+            - name: name
+              in: query
+              description: example name
+              type: string
+            - name: description
+              in: query
+              description: description of example
+              type: string
+        response: 
+        "200":
+            description: Success
+            schema:
+                type: object
+                
