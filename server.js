@@ -82,6 +82,7 @@ app.get('/language', function(request, response){
 
 
 //get lesson using language(get lesson for specific language)
+//used with navigation from lanaguage list to languages's lesson
 app.get('/lesson/:lessonId', function(request, response){
   Lesson.findOne({_id: request.query.lessonId}).populate({path: 'lesson', model:'Lesson'}).exec(function(err, lesson){
         if(err){
@@ -95,6 +96,7 @@ app.get('/lesson/:lessonId', function(request, response){
 
 
 //get example using lesson(get example for specific lesson)
+//used while navigation from lesson list to lesson's example
 app.get('/example/:exampleId', function(request, response){
   Lesson.findOne({_id: request.query.exampleId}).populate({path: 'example', model:'Example'}).exec(function(err, example){
         if(err){
@@ -255,3 +257,7 @@ function ensureToken(request, response, next){
 app.listen(3000, function(){
    console.log("Language service is ruuning on port 3000");
 });
+
+
+//export module to be used using chai and express
+module.exports = app;
