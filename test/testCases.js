@@ -179,19 +179,19 @@ describe("/GET Langugaes", function(){
 
 
 
-describe("/GET /lesson/:lessonId", function(){
-     this.timeout(5000); // How long to wait for a response (ms)
+//describe("/GET /lesson/:lessonId", function(){
+//     this.timeout(5000); // How long to wait for a response (ms)
     
-     var lessonId = '5a6f7a967e9d3b245427b30c';
-    var lessonObj =   Lesson.findOne({_id: lessonId}).populate({path: 'lesson', model:'Lesson'}).exec();
+//     var lessonId = '5a6f7a967e9d3b245427b30c';
+//    var lessonObj =   Lesson.findOne({_id: lessonId}).populate({path: 'lesson', model:'Lesson'}).exec();
     
     //get lesson for specific language
-    it("Should return lesson for a specific languages", function(){
-          .get('/lesson/' + lessonObj._id)
-          .then(function(res) {
-            expect(res).to.have.status(200);
-            expect(res).to.be.json;
-            expect(res.body).to.eql(lesson);
-        });
-    });
-});
+//   it("Should return lesson for a specific languages", function(){
+//          .get('/lesson/' + lessonObj._id)
+//          .then(function(res) {
+//            expect(res).to.have.status(200);
+//            expect(res).to.be.json;
+//            expect(res.body).to.eql(lesson);
+//        });
+//    });
+//});
